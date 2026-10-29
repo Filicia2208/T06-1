@@ -3,14 +3,17 @@ const drawHistogram = (data) => {
     const svg = d3.select("#histogram")
         .append("svg")
         .attr("viewBox", `0 0 ${width} ${height}`) // Responsive SVG
+    
     // Create an inner chart group with margins
     const innerChart = svg.append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
     // Step 6.2 Set up bins
     // First, in shared-constants.js, create a bin generator using d3.bin
-
-    // Second, Generate the bins
+    // const binGenerator = d3.bin()
+        //.value(d => d.energyConsumption) // Accessor for energyConsumption
+    
+        // Second, Generate the bins
     const bins = binGenerator(data); // Save the bins into an array
 
     console.log(bins); // Log the bins to the console for debugging
